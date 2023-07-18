@@ -19,7 +19,6 @@ const bookSchema = new Schema<IBook>(
     },
     price: {
       type: Number,
-      required: true,
     },
     publication_date: {
       type: String,
