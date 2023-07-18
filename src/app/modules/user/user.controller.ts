@@ -2,8 +2,8 @@ import { RequestHandler } from 'express'
 import { UserService } from './user.service'
 import catchAsync from '../../../shared/catchAsync'
 import httpStatus from 'http-status'
-import sendResponse from '../../../shared/sendResponse'
 import { IUser } from './user.interface'
+import sendResponse from '../../../shared/sendResponse'
 
 const createUser: RequestHandler = catchAsync(async (req, res) => {
   const user = req.body

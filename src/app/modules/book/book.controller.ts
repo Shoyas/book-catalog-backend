@@ -3,15 +3,15 @@ import catchAsync from '../../../shared/catchAsync'
 import { BookService } from './book.service'
 import { IBook } from './book.interface'
 import httpStatus from 'http-status'
-import sendResponse from '../../../shared/sendResponse'
 import pick from '../../../shared/pick'
 import { paginationFields } from '../../../constants/pagination'
 import { bookFilterableFields } from './book.constant'
+import sendResponse from '../../../shared/sendResponse'
 
 const createBook: RequestHandler = catchAsync(async (req, res) => {
   const { ...bookData } = req.body
   const result = await BookService.createBook(bookData)
-  console.log('New Book: ', result)
+  // console.log('New Book: ', result)
   sendResponse<IBook>(res, {
     statusCode: httpStatus.OK,
     success: true,
@@ -25,7 +25,7 @@ const createComment: RequestHandler = catchAsync(async (req, res) => {
   const updatedData = req.body
 
   const result = await BookService.createComment(id, updatedData)
-  console.log('Comment:', result)
+  // console.log('Comment:', result)
 
   sendResponse<IBook>(res, {
     statusCode: httpStatus.OK,
